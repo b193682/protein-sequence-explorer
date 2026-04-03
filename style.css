@@ -1,0 +1,158 @@
+
+body {
+    background-color: powderblue;
+    font-family: verdana;
+    margin: 20px;
+}
+
+
+h1, h2, h3 {
+    color: black;
+    font-size: 300%;
+    border: 2px solid powderblue;
+    padding: 10px;
+}
+ 
+h2 {
+    font-size: 200%;
+}
+
+h3 {
+    font-size: 150%;
+}
+
+/* Code adapted from https://www.w3schools.com/howto/howto_js_dropdown.asp */
+/* Navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #ADD8E6;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-family: verdana;
+}
+
+/* Navigation bar links */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Dropdown bar */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: #ADD8E6;
+  font-family: inherit;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Hover */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #bfeaff;
+}
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 180px;
+  border: 1px #87CEEB;
+  z-index: 1;
+}
+/* Dropdown links */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Hover Links */
+.dropdown-content a:hover {
+  background-color: #d9f4ff;
+}
+
+/* Show dropdown */
+.show {
+  display: block;
+}
+
+ /* Example Dataset Button https://www.w3schools.com/tags/tag_button.asp*/
+ .button { 
+ border: none; 
+ color: black; 
+ padding: 12px 24px; 
+ text-align: center; 
+ text-decoration: none !important; 
+ display: inline-block; 
+ font-size: 16px; 
+ margin: 6px 2px; 
+ transition-duration: 0.4s; 
+ cursor: pointer; 
+ font-family: verdana; 
+ } 
+
+
+.button1 {
+  background-color: #87CEEB;
+  color: black;
+  border: 2px solid black;  /* light blue border */
+}
+
+.button1:hover {
+  background-color: #87CEEB;
+  color: black;
+}
+.button2 {
+background-color: grey;
+color: black;
+border: 2px solid black;
+ padding: 5px 10px; 
+}
+
+/* Makes Analysis button link to results  */
+.output-card {
+  cursor: pointer;
+}
+/* Used in revisit_analyses and example.php to display links */
+.output-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 14px 0;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+.output-card:hover {
+  background-color: #eef9ff;
+}
+
+.output-card h2 {
+  margin-top: 0;
+  border: none;
+  padding: 0;
+}
+
+/* Displays GIF on home page */
+.hero-image {
+  display: block;
+  margin: 15px auto;
+  max-width: 200px;
+}

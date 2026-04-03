@@ -1,0 +1,28 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Sun 29 Mar 2026 17:46:37
+# Commandline: patmatmotifs
+#    -sequence /localdisk/home/s2223599/public_html/Website/outputs/analysis_43/filtered.fasta
+#    -outfile motifs.tbl
+#    -rformat2 table
+#    -auto
+# Report_format: table
+# Report_file: motifs.tbl
+########################################
+
+#=======================================
+#
+# Sequence: CAA27007.1     from: 1   to: 147
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+  Start     End   Score Motif    
+     64      67       4 AMIDATION
+
+#---------------------------------------
+#---------------------------------------

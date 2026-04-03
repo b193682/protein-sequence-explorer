@@ -1,0 +1,52 @@
+inmport re
+
+analysis_id = 2
+input_file = "aves_g6pc_example.fasta"
+limit = 5
+
+records = []
+header = None
+seq_lines = []
+
+with open(input_file) as f:
+    for line in f:
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith(">"):
+            if header is not None:
+                records.append((header, "".join(seq_lines)))
+            header = line[1:]
+            seq_lines = []
+        else:
+            seq_lines.append(line)
+
+if header is not None:
+    records.append((header, "".join(seq_lines)))
+
+records = records[:limit]
+
+for header, seq in records:
+    m = re.match(r'^(\S+)\s+(.*)\s+\[([^\]]+)\]$', header)
+    if m:
+        accession = m.group(1)
+        protein_name = m.group(2)
+        organism = m.group(3)
+    else:
+        accession = header.split()[0]
+        protein_name = header
+        organism = "Unknown"
+
+    sequence_length = len(seq)
+
+    accession_sql = accession.replace("'", "''")
+    protein_name_sql = protein_name.replace("'", "''")
+    organism_sql = organism.replace("'", "''")
+    seq_sql = seq.replace("'", "''")
+
+    print(
+        "INSERT INTO fastaseq "
+        "(analysis_id, accession, protein_name, organism, sequence_length, fasta_sequence) "
+        f"VALUES ({analysis_id}, '{accession_sql}', '{protein_name_sql}', "
+        f"'{organism_sql}', {sequence_length}, '{seq_sql}');"
+    )
